@@ -1,0 +1,72 @@
+baby_type = input("Is the baby term, or preterm?")
+sum_of_scores = 0
+upperchest = input("Is the upper chest synchronized, lagging on inspiration or see-saw?")
+lower_chest = input("Is the lower chest having no retractions, just visible or marked?")
+xiphoid_retractions = input("Is the xiphoid retractions none, just visible or marked?")
+nares_dilation = input("Is the nares dilation none, minimal or marked?")
+expiratory_grunt = input("Is expiratory grunt none, heard with stethoscope or audible?")
+
+
+def strip_and_lower(word):
+    word.lower()
+    word.strip()
+
+strip_and_lower(upperchest)
+if upperchest == "synchronized":
+    sum_of_scores += 0;
+elif upperchest == "lagging on inspiration":
+    sum_of_scores += 1
+elif upperchest == "see-saw":
+    sum_of_scores += 2
+
+strip_and_lower(lower_chest)
+if lower_chest == "no retractions":
+    sum_of_scores += 0
+elif lower_chest == "just visible":
+    sum_of_scores += 1
+elif lower_chest == "marked":
+    sum_of_scores +=2
+
+strip_and_lower(xiphoid_retractions)
+if xiphoid_retractions == "none":
+    sum_of_scores += 0
+elif xiphoid_retractions == "just visible":
+    sum_of_scores += 1
+elif xiphoid_retractions == "marked":
+    sum_of_scores += 2
+
+strip_and_lower(nares_dilation)
+if nares_dilation == "none":
+    sum_of_scores += 0
+elif nares_dilation == "minimal":
+    sum_of_scores += 1
+elif nares_dilation == "marked":
+    sum_of_scores += 2
+
+if expiratory_grunt == "none":
+    sum_of_scores += 0
+elif expiratory_grunt == "heard with stethoscope":
+    sum_of_scores += 1
+elif expiratory_grunt == "audible":
+    sum_of_scores += 2
+
+if baby_type == "term":
+    if sum_of_scores  >3:
+        print("The patient requires CPAP")
+
+    else:
+        print("No monitoring required")
+
+elif baby_type == "preterm":
+    if sum_of_scores >= 5:
+        print("The patient requires CPAP")
+
+    elif sum_of_scores > 3:
+        print("Requires monitoring")
+
+    else:
+
+        print("No monitoring required")
+
+
+
